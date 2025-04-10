@@ -19,6 +19,41 @@
     <link rel="stylesheet" href="assets/css/magnific-popup.css" />
     <link rel="stylesheet" href="assets/css/animate.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <style>
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        .stepper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .stepper .circle {
+            height: 18px;
+            width: 18px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            padding: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .stepper .circle.active {
+            background-color: #0d2a5c;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,33 +61,161 @@
     <div class="app-container">
         <div class="d-flex align-items-center justify-content-center min-vh-100">
             <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100">
-                <div class="logo">
-                    <img src="./assets/images/logo/logo-1.webp" alt="logo">
-                </div>
-                <h2>Sign Up</h2>
-                <p class="text-capitalize">Please enter your details</p>
                 <form class="w-100 app-form">
-                    <div class="mb-3 position-relative">
-                        <input type="email" class="app-input" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Email">
-                        <span class="app-input-icon"><i class="fa-solid fa-envelope"></i></span>
+                    <div class="step active" data-step="1">
+                        <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100">
+                            <div class="logo">
+                                <img src="./assets/images/logo/logo-1.webp" alt="logo">
+                            </div>
+                            <h2>Sign Up</h2>
+                            <p class="text-capitalize">Please enter your details</p>
+                            <div class="mb-3 position-relative w-100">
+                                <input type="email" class="app-input form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Email" required>
+                                <span class="app-input-icon"><i class="fa-solid fa-envelope"></i></span>
+                            </div>
+                            <div class="mb-3 position-relative w-100">
+                                <span class="app-input-icon"><i class="fa-solid fa-lock-keyhole"></i></span>
+                                <input type="password" class="app-input form-control" id="exampleInputPassword1"
+                                    placeholder="Password" required>
+                                <span class="eye-icon position-absolute top-50 translate-middle-y"><i
+                                        class="fa-solid fa-eye"></i>
+                            </div>
+                            <button type="button" class="app-btn next-btn">Sign Up</button>
+                        </div>
                     </div>
-                    <div class="mb-3 position-relative">
-                        <span class="app-input-icon"><i class="fa-solid fa-lock-keyhole"></i></span>
-                        <input type="password" class="app-input " id="exampleInputPassword1" placeholder="Password">
-                        <span class="eye-icon position-absolute top-50 translate-middle-y"><i class="fa-solid fa-eye"></i>
+                    <div class="step" data-step="2">
+                        <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100">
+                            <div class="logo">
+                                <img src="./assets/images/logo/logo-1.webp" alt="logo">
+                            </div>
+                            <h2>Introduce Yourself</h2>
+                            <p class="text-capitalize text-center">Who do we have the pleasure of serving?</p>
+                            <div class="position-relative w-100">
+                                <input type="text" class="app-input form-control" id="fullName" aria-describedby="fullName"
+                                    placeholder="Full Name" required>
+                                <span class="app-input-icon"><i class="fa-solid fa-user"></i></span>
+                            </div>
+                            <div class="position-relative w-100">
+                                <span class="app-input-icon"><i class="fa-solid fa-lock-keyhole"></i></span>
+                                <input type="tel" class="app-input form-control" id="phone" placeholder="Phone Number" required>
+
+                            </div>
+                            <div class="w-100">
+                                <p>Are you using Poplin for Personal use or Business?*</p>
+                                <div class="d-flex justify-content-start align-items-center gap-3 w-100">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radioDefault" id="Personal" required>
+                                        <label class="form-check-label" for="Personal">
+                                            Personal
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radioDefault" id="Business" required>
+                                        <label class="form-check-label" for="Business">
+                                            Business
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-100">
+                                <p class="text-start">Are you 65 or over?*</p>
+                                <div class="d-flex justify-content-start align-items-center gap-3 w-100">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ageDefault" id="No" required>
+                                        <label class="form-check-label" for="No">
+                                            No
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ageDefault" id="Yes" required>
+                                        <label class="form-check-label" for="Yes">
+                                            Yes
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-100 d-flex align-items-center justify-content-between">
+                                <button type="button" class="btn btn-secondary prev-btn">Previous</button>
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" class="app-btn">Sign Up</button>
                 </form>
-                <div class="pagination-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+                <div class="stepper mb-4">
+                    <div class="circle step-circle" data-step="1">1</div>
+                    <div class="circle step-circle" data-step="2">2</div>
                 </div>
             </div>
 
         </div>
     </div>
+    <div class="app-container mt-5">
+        <h2 class="mb-4">Signup Process</h2>
+
+
+        <form id="signupForm" class="app-form">
+            <!-- Step 1 -->
+            <div class="step active" data-step="1">
+
+
+                <div class="logo">
+                    <img src="./assets/images/logo/logo-1.webp" alt="logo">
+                </div>
+                <h2>Sign Up</h2>
+                <p class="text-capitalize">Please enter your details</p>
+                <div class="mb-3 position-relative">
+                    <input type="email" class="app-input" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Email">
+                    <span class="app-input-icon"><i class="fa-solid fa-envelope"></i></span>
+                </div>
+                <div class="mb-3 position-relative">
+                    <span class="app-input-icon"><i class="fa-solid fa-lock-keyhole"></i></span>
+                    <input type="password" class="app-input " id="exampleInputPassword1" placeholder="Password">
+                    <span class="eye-icon position-absolute top-50 translate-middle-y"><i class="fa-solid fa-eye"></i>
+                </div>
+                <button type="submit" class="app-btn next-btn">Sign Up</button>
+
+
+
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step" data-step="2">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="passwordStep2" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="passwordStep2" required>
+                </div>
+                <button type="button" class="btn btn-secondary prev-btn">Previous</button>
+                <button type="button" class="btn btn-primary next-btn">Next</button>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step" data-step="3">
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone">
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea class="form-control" id="address"></textarea>
+                </div>
+                <button type="button" class="btn btn-secondary prev-btn">Previous</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+
+        <div class="stepper mb-4">
+            <div class="circle step-circle" data-step="1">1</div>
+            <div class="circle step-circle" data-step="2">2</div>
+            <div class="circle step-circle" data-step="3">3</div>
+        </div>
+    </div>
+
 
     <!-- All Js File -->
     <script src="assets/js/vendor/jquery-3.6.4.min.js"></script>

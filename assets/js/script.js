@@ -1,5 +1,50 @@
 (function ($) {
   "use strict";
+
+  let currentStep = 1;
+
+    function showStep(step) {
+      $('.step').removeClass('active');
+      $('.step[data-step="' + step + '"]').addClass('active');
+      $('.step-circle').removeClass('active');
+      $('.step-circle[data-step="' + step + '"]').addClass('active');
+    }
+
+    $('.next-btn').click(function () {
+      const current = $('.step[data-step="' + currentStep + '"]');
+      const inputs = current.find('input, textarea');
+      let valid = true;
+
+      inputs.each(function () {
+        if (!this.checkValidity()) {
+          this.reportValidity();
+          valid = false;
+          return false;
+        }
+      });
+
+      if (valid && currentStep < 3) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    });
+
+    $('.prev-btn').click(function () {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
+
+    $('#signupForm').on('submit', function (e) {
+      e.preventDefault();
+      alert('Signup Successful!');
+    });
+
+    showStep(currentStep);
+
+
+
   $('.eye-icon').on('click', function () {
     const $icon = $(this).find('i');
     const $passwordInput = $('#exampleInputPassword1');

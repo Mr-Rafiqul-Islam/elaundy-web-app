@@ -1119,7 +1119,6 @@ p {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  cursor: pointer;
   z-index: 5;
 }
 .app-form .app-input-icon i {
