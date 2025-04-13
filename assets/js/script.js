@@ -1,5 +1,20 @@
 (function ($) {
   "use strict";
+  // form submit redirect to index2.html
+  $("#signup-form").on("submit", function (e) {
+    e.preventDefault(); // Prevent the default form submission
+    window.location.href = "index2.html"; // Redirect to index2.html
+  });
+  // banner slider js
+  $('.banner-slider').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    arrows: false,
+    autoplay: true,
+  });
+
 
   let currentStep = 1;
 
