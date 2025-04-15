@@ -1,7 +1,7 @@
 (function ($) {
   "use strict";
 
-  
+
   // click card to select radio button
   $(".selectable-card").click(function () {
     $(this).find('input[type="radio"]').prop("checked", true).trigger("change");
@@ -51,7 +51,7 @@
       }
     });
 
-    if (valid && currentStep < 3) {
+    if (valid && currentStep < 6) {
       currentStep++;
       showStep(currentStep);
     }
