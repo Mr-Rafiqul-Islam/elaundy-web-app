@@ -1180,6 +1180,32 @@ p {
   color: var(--primary);
 }
 
+.app-next-btn {
+  padding: 0.375rem 0.75rem;
+  background: var(--primary);
+  color: white !important;
+  border-radius: 0.375rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.app-next-btn:hover {
+  background: rgba(29, 46, 92, 0.8);
+}
+
+.app-prev-btn {
+  padding: 0.375rem 0.75rem;
+  background: var(--secondary2);
+  color: white !important;
+  border-radius: 0.375rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.app-prev-btn:hover {
+  background: var(--tertiary);
+}
+
 .pagination-dots {
   margin-top: 20px;
 }
@@ -1200,7 +1226,8 @@ p {
 }
 
 .dot.active::after {
-  content: "✔"; /* Unicode checkmark */
+  content: "✔";
+  /* Unicode checkmark */
   color: white;
   font-size: 10px;
   position: absolute;
@@ -1288,4 +1315,23 @@ p {
 }
 .slick-dots .slick-dots li.slick-active button {
   background-color: var(--primary) !important;
+}
+
+.selectable-card {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  -webkit-transition: border-color 0.3s, background-color 0.3s;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.selectable-card.selected {
+  border: 1px solid #007bff;
+}
+
+.selectable-card ul li {
+  padding: 5px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
 }

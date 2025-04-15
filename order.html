@@ -23,18 +23,19 @@
 
 </head>
 
-<body>
-    <h1 class="text-center fw-bold display-5 my-5">Place An order</h1>
+<body class="section-bg">
+
 
     <div class="app-container">
         <div class="d-flex align-items-center justify-content-center min-vh-100 w-100">
-            <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100">
+            <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100 p-2">
+                <h1 class="text-center fw-bold my-5">Place An order</h1>
                 <form id="order-form" action="" class="app-form w-100">
                     <div class="step active w-100" data-step="1">
                         <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100">
                             <div class="w-100">
                                 <h5 class="text-start my-2">Pickup Locations</h5>
-                            <p class="text-capitalize">Please enter your order details</p>
+                                <p class="text-capitalize">Please enter your order details</p>
                             </div>
                             <div class="position-relative w-100">
                                 <input type="text" class="app-input form-control" id="address" name="address"
@@ -42,22 +43,75 @@
                                 <span class="app-input-icon"><i class="fa-solid fa-pencil"></i></span>
                             </div>
                             <div class="mb-3 position-relative w-100">
-                                <label for="exampleDataList" class="form-label">Slect Pickup Spot</label>
+                                <label for="exampleDataList" class="form-label">Select Pickup Spot</label>
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Select an option</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
-                                  </select>
-                               
+                                </select>
                             </div>
-                            <button type="submit" class="app-btn next-btn">Continue</button>
+                            <button type="button" class="app-btn next-btn">Continue</button>
+                        </div>
+                    </div>
+                    <div class="step w-100" data-step="2">
+                        <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100">
+                            <div class="w-100">
+                                <h5 class="text-start my-2 text-uppercase">Pickup Speed</h5>
+                                <p class="text-capitalize">Please choose your desired delivery speed</p>
+                            </div>
+                            <div class="w-100">
+                                <div class="card selectable-card">
+                                    <div class="card-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioDefault"
+                                                id="radioDefault1">
+                                            <label class="form-check-label" for="radioDefault1">
+                                                Standerd Delivery
+                                            </label>
+                                            <ul class="list-unstyled mt-2 w-100">
+                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-ticket" style="transform: rotate(90deg);"></i><span>Place order by 3pm today</span></li>
+                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-car"></i><span>Pickup by 8pm today</span></li>
+                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-truck"></i><span>Delivered by 8pm tomorrow</span></li>
+                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-circle-dollar"></i><span>$30 minimum charge</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card selectable-card">
+                                    <div class="card-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioDefault"
+                                                id="radioDefault2">
+                                            <label class="form-check-label" for="radioDefault2">
+                                                Express Delivery
+                                            </label>
+                                            <ul class="list-unstyled mt-2">
+                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-ticket" style="transform: rotate(90deg);"></i><span>Place order by 10am today</span></li>
+                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-car"></i><span>Pickup by 2pm today</span></li>
+                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-truck"></i><span>Delivered by 8pm tomorrow</span></li>
+                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-clothes-hanger"></i><span>Hang-dry unavailable</span></li>
+                                                <li class="d-flex gap-2 align-items-start"><i class="fa-regular fa-weight-scale" style="margin-top: 6px;"></i><span>Weight may not exceed 60 pounds</span></li>
+                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-circle-dollar"></i><span>$50 minimum charge</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-100 d-flex align-items-center justify-content-between">
+                                <button type="button" class="app-prev-btn prev-btn">Previous</button>
+                                <button type="button" class="app-next-btn next-btn">Next</button>
+                            </div>
                         </div>
                     </div>
                 </form>
                 <div class="stepper mb-4">
                     <div class="circle step-circle" data-step="1">1</div>
                     <div class="circle step-circle" data-step="2">2</div>
+                    <div class="circle step-circle" data-step="3">3</div>
+                    <div class="circle step-circle" data-step="4">4</div>
+                    <div class="circle step-circle" data-step="5">5</div>
+                    <div class="circle step-circle" data-step="6">6</div>
                 </div>
             </div>
         </div>

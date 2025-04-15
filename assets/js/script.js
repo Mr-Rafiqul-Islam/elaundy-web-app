@@ -1,12 +1,26 @@
 (function ($) {
   "use strict";
+
+  
+  // click card to select radio button
+  $(".selectable-card").click(function () {
+    $(this).find('input[type="radio"]').prop("checked", true).trigger("change");
+  });
+
+  $('input[type="radio"]').change(function () {
+    $(".selectable-card").removeClass("selected");
+    if ($(this).is(":checked")) {
+      $(this).closest(".selectable-card").addClass("selected");
+    }
+  });
+
   // form submit redirect to index2.html
   $("#signup-form").on("submit", function (e) {
     e.preventDefault(); // Prevent the default form submission
     window.location.href = "index2.html"; // Redirect to index2.html
   });
   // banner slider js
-  $('.banner-slider').slick({
+  $(".banner-slider").slick({
     dots: true,
     infinite: true,
     speed: 300,
@@ -15,61 +29,58 @@
     autoplay: true,
   });
 
-
   let currentStep = 1;
 
-    function showStep(step) {
-      $('.step').removeClass('active');
-      $('.step[data-step="' + step + '"]').addClass('active');
-      $('.step-circle').removeClass('active');
-      $('.step-circle[data-step="' + step + '"]').addClass('active');
+  function showStep(step) {
+    $(".step").removeClass("active");
+    $('.step[data-step="' + step + '"]').addClass("active");
+    $(".step-circle").removeClass("active");
+    $('.step-circle[data-step="' + step + '"]').addClass("active");
+  }
+
+  $(".next-btn").click(function () {
+    const current = $('.step[data-step="' + currentStep + '"]');
+    const inputs = current.find("input, textarea");
+    let valid = true;
+
+    inputs.each(function () {
+      if (!this.checkValidity()) {
+        this.reportValidity();
+        valid = false;
+        return false;
+      }
+    });
+
+    if (valid && currentStep < 3) {
+      currentStep++;
+      showStep(currentStep);
     }
+  });
 
-    $('.next-btn').click(function () {
-      const current = $('.step[data-step="' + currentStep + '"]');
-      const inputs = current.find('input, textarea');
-      let valid = true;
+  $(".prev-btn").click(function () {
+    if (currentStep > 1) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  });
 
-      inputs.each(function () {
-        if (!this.checkValidity()) {
-          this.reportValidity();
-          valid = false;
-          return false;
-        }
-      });
+  $("#signupForm").on("submit", function (e) {
+    e.preventDefault();
+    alert("Signup Successful!");
+  });
 
-      if (valid && currentStep < 3) {
-        currentStep++;
-        showStep(currentStep);
-      }
-    });
+  showStep(currentStep);
 
-    $('.prev-btn').click(function () {
-      if (currentStep > 1) {
-        currentStep--;
-        showStep(currentStep);
-      }
-    });
+  $(".eye-icon").on("click", function () {
+    const $icon = $(this).find("i");
+    const $passwordInput = $("#exampleInputPassword1");
 
-    $('#signupForm').on('submit', function (e) {
-      e.preventDefault();
-      alert('Signup Successful!');
-    });
-
-    showStep(currentStep);
-
-
-
-  $('.eye-icon').on('click', function () {
-    const $icon = $(this).find('i');
-    const $passwordInput = $('#exampleInputPassword1');
-    
-    if ($passwordInput.attr('type') === 'password') {
-      $passwordInput.attr('type', 'text');
-      $icon.removeClass('fa-eye').addClass('fa-eye-slash');
+    if ($passwordInput.attr("type") === "password") {
+      $passwordInput.attr("type", "text");
+      $icon.removeClass("fa-eye").addClass("fa-eye-slash");
     } else {
-      $passwordInput.attr('type', 'password');
-      $icon.removeClass('fa-eye-slash').addClass('fa-eye');
+      $passwordInput.attr("type", "password");
+      $icon.removeClass("fa-eye-slash").addClass("fa-eye");
     }
   });
   $(".services-slider-two").slick({
@@ -96,7 +107,7 @@
       },
     ],
   });
-  
+
   // dynamic year for copyright
   document.getElementById("copyright_year").textContent =
     new Date().getFullYear();
@@ -108,8 +119,8 @@
       "url(" + $(this).attr("data-background") + ")"
     );
   });
-   // Magnific popup image js
-   $(".image-popup").magnificPopup({
+  // Magnific popup image js
+  $(".image-popup").magnificPopup({
     type: "image",
     gallery: {
       enabled: true,
@@ -127,8 +138,6 @@
       $("#header-fixed-height").addClass("active-height");
     }
   });
-
- 
 
   // Mobile menu js start
   $(".mobile-topbar .bars").on("click", function () {
