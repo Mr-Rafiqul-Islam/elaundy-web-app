@@ -1335,3 +1335,34 @@ p {
   font-weight: 500;
   color: #333;
 }
+
+.form-select {
+  padding: 15px 10px !important;
+}
+
+.bag-desc {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  line-height: 22px;
+}
+
+.instruction-icon {
+  cursor: pointer;
+}
+
+#pickupInstructionsWrapper {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.4s ease, opacity 0.4s ease;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  margin-top: 0;
+}
+
+/* When visible */
+#pickupInstructionsWrapper.show {
+  max-height: 200px; /* Adjust as needed */
+  opacity: 1;
+  margin-top: 10px;
+}

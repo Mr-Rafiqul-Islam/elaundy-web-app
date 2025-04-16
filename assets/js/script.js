@@ -1,7 +1,9 @@
 (function ($) {
   "use strict";
 
-
+  $('#pickupChecks').change(function () {
+    $('#pickupInstructionsWrapper').toggleClass('show', this.checked);
+});
   // click card to select radio button
   $(".selectable-card").click(function () {
     $(this).find('input[type="radio"]').prop("checked", true).trigger("change");

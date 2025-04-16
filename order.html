@@ -43,14 +43,52 @@
                                 <span class="app-input-icon"><i class="fa-solid fa-pencil"></i></span>
                             </div>
                             <div class="mb-3 position-relative w-100">
-                                <label for="exampleDataList" class="form-label">Select Pickup Spot</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Select an option</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                <label for="pickupSpot" class="form-label">Select Pickup Spot</label>
+                                <select id="pickupSpot" class="form-select" aria-label="Pickup Spot" required>
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="Front Door">Front Door</option>
+                                    <option value="Back Door">Back Door</option>
+                                    <option value="Reception">Reception</option>
                                 </select>
                             </div>
+                            <div class="w-100 d-flex align-items-center justify-content-between">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="pickupChecks"
+                                        id="pickupChecks" value="1">
+                                    <label class="form-check-label" for="pickupChecks">
+                                        Add Pickup instructions
+                                    </label>
+                                </div>
+                                <span class="instruction-icon" role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                                    <i class="fa-regular fa-circle-question fs-5"></i>
+                                </span>
+                                <div class="modal fade" id="staticBackdrop"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h1 class="modal-title fs-5" id="staticBackdropLabel">Pickup instructions</h1>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="text-black fw-medium">Your Laundry Pro will ONLY these details after accepting your order.</p>
+                                            <ul class="list-unstyled ms-3">
+                                                <li>Building access details</li>
+                                                <li>Gate codes</li>
+                                                <li>How laundry can be found</li>
+                                            </ul>
+                                            <p class="text-black mt-2">For requests related to pickup or delivery timing, please message your Laundry Pro</p>
+                                        </div>
+                                        
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                                  
+                            </div>
+                            <div id="pickupInstructionsWrapper" class="w-100 text-start">
+                                <textarea class="form-control" id="pickupInstructions" name="pickupInstructions" rows="3" placeholder="Enter pickup instructions here..."></textarea>
+                            </div>
+
                             <button type="button" class="app-btn next-btn">Continue</button>
                         </div>
                     </div>
@@ -65,7 +103,7 @@
                                     <div class="card-body">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="radioDefault"
-                                                id="radioDefault1" required>
+                                                id="radioDefault1" value="Standerd Delivery" required>
                                             <label class="form-check-label" for="radioDefault1">
                                                 Standerd Delivery
                                             </label>
@@ -82,7 +120,7 @@
                                     <div class="card-body">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="radioDefault"
-                                                id="radioDefault2">
+                                                id="radioDefault2" value="Express Delivery" required>
                                             <label class="form-check-label" for="radioDefault2">
                                                 Express Delivery
                                             </label>
@@ -113,33 +151,33 @@
                                 <label for="exampleDataList" class="form-label">Select Detergent</label>
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Select Detergent</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option value="Hypoallergenic">Hypoallergenic</option>
+                                    <option value="Premium Scented">Premium Scented</option>
+                                    <option value="Provide">I will Provide</option>
                                 </select>
                             </div>
                             <div class="w-100">
                                 <h6 class="mb-2">Check all that apply</h6>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="cycle">
+                                    <input class="form-check-input" type="checkbox" value="1" id="cycle">
                                     <label class="form-check-label" for="cycle">
                                       Delicate cycle
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="hang_dry">
+                                    <input class="form-check-input" type="checkbox" value="1" id="hang_dry">
                                     <label class="form-check-label" for="hang_dry">
                                       Hang-dry
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="return_items">
+                                    <input class="form-check-input" type="checkbox" value="1" id="return_items">
                                     <label class="form-check-label" for="return_items">
                                       Return items on hangers
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="additional_rqst">
+                                    <input class="form-check-input" type="checkbox" value="1" id="additional_rqst">
                                     <label class="form-check-label" for="additional_rqst">
                                       Additional Requests
                                     </label>
@@ -155,7 +193,7 @@
                         <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100">
                             <div class="w-100">
                                 <h5 class="text-start my-2 text-uppercase">Bag Count</h5>
-                                <p>
+                                <p class="bag-desc">
                                     Put your laundry out for pickup in any bag you want, disposable bags, or your hamper. If you use a hamper we'll transfer your clothes to our bags and leave your hamper behind. You can also use laundry bags, which we'll return to you laundered. At this time, you can only choose one bag size.
                                 </p>
                             </div>
