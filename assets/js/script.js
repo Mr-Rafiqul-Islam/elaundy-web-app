@@ -1,6 +1,42 @@
 (function ($) {
   "use strict";
 
+  
+  // counter buttons
+  function updateButtons(targetId) {
+    const value = parseInt($(`#${targetId}`).text());
+    const $decBtn = $(`.decrease[data-target="${targetId}"]`);
+    const $incBtn = $(`.increase[data-target="${targetId}"]`);
+
+    $decBtn.prop('disabled', value <= 1);
+    $incBtn.prop('disabled', value >= 5);
+  }
+$(document).ready(function () {
+  // Initialize button states
+  ['small', 'regular', 'large'].forEach(updateButtons);
+
+  $('.increase').on('click', function () {
+    const targetId = $(this).data('target');
+    const $valueEl = $(`#${targetId}`);
+    let value = parseInt($valueEl.text());
+    if (value < 5) {
+      $valueEl.text(++value);
+      updateButtons(targetId);
+    }
+  });
+
+  $('.decrease').on('click', function () {
+    const targetId = $(this).data('target');
+    const $valueEl = $(`#${targetId}`);
+    let value = parseInt($valueEl.text());
+    if (value > 1) {
+      $valueEl.text(--value);
+      updateButtons(targetId);
+    }
+  });
+});
+
+// for pickup instructions
   $('#pickupChecks').change(function () {
     $('#pickupInstructionsWrapper').toggleClass('show', this.checked);
 });

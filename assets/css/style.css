@@ -1370,3 +1370,78 @@ p {
   opacity: 1;
   margin-top: 10px;
 }
+
+.counter-wrapper {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-left: auto;
+}
+
+.counter-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #000;
+  color: white;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+
+.counter-btn:disabled {
+  background-color: #ccc !important;
+  cursor: not-allowed;
+}
+
+.counter-value {
+  width: 40px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.bag-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.bag-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.bag-icon {
+  font-size: 24px;
+}
+
+.bag-text-title {
+  font-weight: 600;
+}
+
+.bag-text-sub {
+  font-size: 13px;
+  color: #666;
+}

@@ -28,7 +28,7 @@
 
     <div class="app-container">
         <div class="d-flex align-items-center justify-content-center min-vh-100 w-100">
-            <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100 p-2">
+            <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100 p-4 border rounded-5 shadow-sm">
                 <h1 class="text-center fw-bold my-5">Place An order</h1>
                 <form id="order-form" action="" class="app-form w-100">
                     <div class="step active w-100" data-step="1">
@@ -92,7 +92,6 @@
                                 <textarea class="form-control" id="pickupInstructions" name="pickupInstructions"
                                     rows="3" placeholder="Enter pickup instructions here..."></textarea>
                             </div>
-
                             <button type="button" class="app-btn next-btn">Continue</button>
                         </div>
                     </div>
@@ -269,6 +268,52 @@
                                     hamper behind. You can also use laundry bags, which we'll return to you laundered.
                                     At this time, you can only choose one bag size.
                                 </p>
+                            </div>
+                            <div class="w-100">
+                                <div class="bag-item">
+                                  <div class="bag-info">
+                                    <span class="bag-icon">👜</span>
+                                    <div>
+                                      <div class="bag-text-title">Small</div>
+                                      <div class="bag-text-sub">Grocery bag size</div>
+                                    </div>
+                                  </div>
+                                  <div class="counter-wrapper">
+                                    <button class="counter-btn decrease" data-target="small">−</button>
+                                    <div class="counter-value" id="small">1</div>
+                                    <button class="counter-btn increase" data-target="small">+</button>
+                                  </div>
+                                </div>
+                            
+                                <div class="bag-item">
+                                  <div class="bag-info">
+                                    <span class="bag-icon">👜</span>
+                                    <div>
+                                      <div class="bag-text-title">Regular</div>
+                                      <div class="bag-text-sub">Kitchen bag size/hamper</div>
+                                    </div>
+                                  </div>
+                                  <div class="counter-wrapper">
+                                    <button class="counter-btn decrease" data-target="regular">−</button>
+                                    <div class="counter-value" id="regular">1</div>
+                                    <button class="counter-btn increase" data-target="regular">+</button>
+                                  </div>
+                                </div>
+                            
+                                <div class="bag-item">
+                                  <div class="bag-info">
+                                    <span class="bag-icon">👜</span>
+                                    <div>
+                                      <div class="bag-text-title">Large</div>
+                                      <div class="bag-text-sub">Lawn/contractor bag size</div>
+                                    </div>
+                                  </div>
+                                  <div class="counter-wrapper">
+                                    <button class="counter-btn decrease" data-target="large">−</button>
+                                    <div class="counter-value" id="large">1</div>
+                                    <button class="counter-btn increase" data-target="large">+</button>
+                                  </div>
+                                </div>
                             </div>
                             <div class="w-100 d-flex align-items-center justify-content-between">
                                 <button type="button" class="app-prev-btn prev-btn">Previous</button>
