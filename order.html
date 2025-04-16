@@ -59,34 +59,41 @@
                                         Add Pickup instructions
                                     </label>
                                 </div>
-                                <span class="instruction-icon" role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                                <span class="instruction-icon" role="button" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
                                     <i class="fa-regular fa-circle-question fs-5"></i>
                                 </span>
-                                <div class="modal fade" id="staticBackdrop"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1"
+                                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h1 class="modal-title fs-5" id="staticBackdropLabel">Pickup instructions</h1>
-                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Pickup
+                                                    instructions</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p class="text-black fw-medium">Your Laundry Pro will ONLY these details
+                                                    after accepting your order.</p>
+                                                <ul class="list-unstyled ms-3">
+                                                    <li>Building access details</li>
+                                                    <li>Gate codes</li>
+                                                    <li>How laundry can be found</li>
+                                                </ul>
+                                                <p class="text-black mt-2">For requests related to pickup or delivery
+                                                    timing, please message your Laundry Pro</p>
+                                            </div>
+
                                         </div>
-                                        <div class="modal-body">
-                                            <p class="text-black fw-medium">Your Laundry Pro will ONLY these details after accepting your order.</p>
-                                            <ul class="list-unstyled ms-3">
-                                                <li>Building access details</li>
-                                                <li>Gate codes</li>
-                                                <li>How laundry can be found</li>
-                                            </ul>
-                                            <p class="text-black mt-2">For requests related to pickup or delivery timing, please message your Laundry Pro</p>
-                                        </div>
-                                        
-                                      </div>
                                     </div>
-                                  </div>
-                                  
-                                  
+                                </div>
+
+
                             </div>
                             <div id="pickupInstructionsWrapper" class="w-100 text-start">
-                                <textarea class="form-control" id="pickupInstructions" name="pickupInstructions" rows="3" placeholder="Enter pickup instructions here..."></textarea>
+                                <textarea class="form-control" id="pickupInstructions" name="pickupInstructions"
+                                    rows="3" placeholder="Enter pickup instructions here..."></textarea>
                             </div>
 
                             <button type="button" class="app-btn next-btn">Continue</button>
@@ -102,16 +109,32 @@
                                 <div class="card selectable-card">
                                     <div class="card-body">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioDefault"
-                                                id="radioDefault1" value="Standerd Delivery" required>
-                                            <label class="form-check-label" for="radioDefault1">
-                                                Standerd Delivery
-                                            </label>
+                                            <div class="d-flex">
+                                                <div>
+                                                    <input class="form-check-input" type="radio" name="radioDefault"
+                                                        id="radioDefault1" value="Standerd Delivery" required>
+                                                    <label class="form-check-label" for="radioDefault1">
+                                                        Standerd Delivery
+                                                    </label>
+                                                </div>
+                                                <div class="ms-auto">
+                                                    <span class="badge custom-tertiary-bg py-2 rounded-pill">$1.60/LB</span>
+                                                </div>
+                                            </div>
                                             <ul class="list-unstyled mt-2 w-100">
-                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-ticket" style="transform: rotate(90deg);"></i><span>Place order by 3pm today</span></li>
-                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-car"></i><span>Pickup by 8pm today</span></li>
-                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-truck"></i><span>Delivered by 8pm tomorrow</span></li>
-                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-circle-dollar"></i><span>$30 minimum charge</span></li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="fa-regular fa-ticket"
+                                                        style="transform: rotate(90deg);"></i><span>Place order by 3pm
+                                                        today</span></li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="fa-regular fa-car"></i><span>Pickup by 8pm today</span>
+                                                </li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="fa-regular fa-truck"></i><span>Delivered by 8pm
+                                                        tomorrow</span></li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="fa-regular fa-circle-dollar"></i><span>$30 minimum
+                                                        charge</span></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -119,18 +142,39 @@
                                 <div class="card selectable-card">
                                     <div class="card-body">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioDefault"
-                                                id="radioDefault2" value="Express Delivery" required>
-                                            <label class="form-check-label" for="radioDefault2">
-                                                Express Delivery
-                                            </label>
+                                            <div class="d-flex">
+                                                <div>
+                                                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" value="Express Delivery"
+                                                        required>
+                                                    <label class="form-check-label" for="radioDefault2">
+                                                        Express Delivery
+                                                    </label>
+                                                </div>
+                                                <div class="ms-auto">
+                                                    <span class="badge custom-tertiary-bg py-2 rounded-pill">$3/LB</span>
+                                                </div>
+                                            </div>
                                             <ul class="list-unstyled mt-2">
-                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-ticket" style="transform: rotate(90deg);"></i><span>Place order by 10am today</span></li>
-                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-car"></i><span>Pickup by 2pm today</span></li>
-                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-truck"></i><span>Delivered by 8pm tomorrow</span></li>
-                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-clothes-hanger"></i><span>Hang-dry unavailable</span></li>
-                                                <li class="d-flex gap-2 align-items-start"><i class="fa-regular fa-weight-scale" style="margin-top: 6px;"></i><span>Weight may not exceed 60 pounds</span></li>
-                                                <li class="d-flex gap-2 align-items-center"><i class="fa-regular fa-circle-dollar"></i><span>$50 minimum charge</span></li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="fa-regular fa-ticket"
+                                                        style="transform: rotate(90deg);"></i><span>Place order by 10am
+                                                        today</span></li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="fa-regular fa-car"></i><span>Pickup by 2pm today</span>
+                                                </li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="fa-regular fa-truck"></i><span>Delivered by 8pm
+                                                        tomorrow</span></li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="fa-regular fa-clothes-hanger"></i><span>Hang-dry
+                                                        unavailable</span></li>
+                                                <li class="d-flex gap-2 align-items-start"><i
+                                                        class="fa-regular fa-weight-scale"
+                                                        style="margin-top: 6px;"></i><span>Weight may not exceed 60
+                                                        pounds</span></li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="fa-regular fa-circle-dollar"></i><span>$50 minimum
+                                                        charge</span></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -161,25 +205,25 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="1" id="cycle">
                                     <label class="form-check-label" for="cycle">
-                                      Delicate cycle
+                                        Delicate cycle
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="1" id="hang_dry">
                                     <label class="form-check-label" for="hang_dry">
-                                      Hang-dry
+                                        Hang-dry
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="1" id="return_items">
                                     <label class="form-check-label" for="return_items">
-                                      Return items on hangers
+                                        Return items on hangers
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="1" id="additional_rqst">
                                     <label class="form-check-label" for="additional_rqst">
-                                      Additional Requests
+                                        Additional Requests
                                     </label>
                                 </div>
                             </div>
@@ -194,42 +238,51 @@
                             <div class="w-100">
                                 <h5 class="text-start my-2 text-uppercase">Bag Count</h5>
                                 <p class="bag-desc">
-                                    Put your laundry out for pickup in any bag you want, disposable bags, or your hamper. If you use a hamper we'll transfer your clothes to our bags and leave your hamper behind. You can also use laundry bags, which we'll return to you laundered. At this time, you can only choose one bag size.
+                                    Put your laundry out for pickup in any bag you want, disposable bags, or your
+                                    hamper. If you use a hamper we'll transfer your clothes to our bags and leave your
+                                    hamper behind. You can also use laundry bags, which we'll return to you laundered.
+                                    At this time, you can only choose one bag size.
                                 </p>
                             </div>
                             <div class="w-100 d-flex align-items-center justify-content-between">
                                 <button type="button" class="app-prev-btn prev-btn">Previous</button>
                                 <button type="button" class="app-next-btn next-btn">Next</button>
                             </div>
-                        </div>    
+                        </div>
                     </div>
                     <div class="step w-100" data-step="5">
                         <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100">
                             <div class="w-100">
                                 <h5 class="text-start my-2 text-uppercase">Bag Count</h5>
                                 <p>
-                                    Put your laundry out for pickup in any bag you want, disposable bags, or your hamper. If you use a hamper we'll transfer your clothes to our bags and leave your hamper behind. You can also use laundry bags, which we'll return to you laundered. At this time, you can only choose one bag size.
+                                    Put your laundry out for pickup in any bag you want, disposable bags, or your
+                                    hamper. If you use a hamper we'll transfer your clothes to our bags and leave your
+                                    hamper behind. You can also use laundry bags, which we'll return to you laundered.
+                                    At this time, you can only choose one bag size.
                                 </p>
                             </div>
                             <div class="w-100 d-flex align-items-center justify-content-between">
                                 <button type="button" class="app-prev-btn prev-btn">Previous</button>
                                 <button type="button" class="app-next-btn next-btn">Next</button>
                             </div>
-                        </div>    
+                        </div>
                     </div>
                     <div class="step w-100" data-step="6">
                         <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100">
                             <div class="w-100">
                                 <h5 class="text-start my-2 text-uppercase">Bag Count</h5>
                                 <p>
-                                    Put your laundry out for pickup in any bag you want, disposable bags, or your hamper. If you use a hamper we'll transfer your clothes to our bags and leave your hamper behind. You can also use laundry bags, which we'll return to you laundered. At this time, you can only choose one bag size.
+                                    Put your laundry out for pickup in any bag you want, disposable bags, or your
+                                    hamper. If you use a hamper we'll transfer your clothes to our bags and leave your
+                                    hamper behind. You can also use laundry bags, which we'll return to you laundered.
+                                    At this time, you can only choose one bag size.
                                 </p>
                             </div>
                             <div class="w-100 d-flex align-items-center justify-content-between">
                                 <button type="button" class="app-prev-btn prev-btn">Previous</button>
                                 <button type="button" class="app-next-btn next-btn">Next</button>
                             </div>
-                        </div>    
+                        </div>
                     </div>
                 </form>
                 <div class="stepper mb-4">

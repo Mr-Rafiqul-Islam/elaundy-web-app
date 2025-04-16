@@ -169,6 +169,10 @@ p {
   background: var(--secondary);
 }
 
+.custom-tertiary-bg {
+  background-color: var(--tertiary);
+}
+
 .theme-btn {
   padding: 15px 30px;
   border-radius: 999px;
