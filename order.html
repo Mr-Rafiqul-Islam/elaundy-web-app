@@ -29,7 +29,7 @@
     <div class="app-container">
         <div class="d-flex align-items-center justify-content-center min-vh-100 w-100">
             <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100 p-4 border rounded-5 shadow-sm">
-                <h1 class="text-center fw-bold my-5">Place An order</h1>
+                <h1 class="text-center fw-bold my-4">Place An order</h1>
                 <form id="order-form" action="" class="app-form w-100">
                     <div class="step active w-100" data-step="1">
                         <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100">
@@ -279,9 +279,9 @@
                                     </div>
                                   </div>
                                   <div class="counter-wrapper">
-                                    <button class="counter-btn decrease" data-target="small">−</button>
+                                    <button type="button" class="counter-btn decrease" data-target="small">−</button>
                                     <div class="counter-value" id="small">1</div>
-                                    <button class="counter-btn increase" data-target="small">+</button>
+                                    <button type="button" class="counter-btn increase" data-target="small">+</button>
                                   </div>
                                 </div>
                             
@@ -294,12 +294,11 @@
                                     </div>
                                   </div>
                                   <div class="counter-wrapper">
-                                    <button class="counter-btn decrease" data-target="regular">−</button>
+                                    <button type="button" class="counter-btn decrease" data-target="regular">−</button>
                                     <div class="counter-value" id="regular">1</div>
-                                    <button class="counter-btn increase" data-target="regular">+</button>
+                                    <button type="button" class="counter-btn increase" data-target="regular">+</button>
                                   </div>
                                 </div>
-                            
                                 <div class="bag-item">
                                   <div class="bag-info">
                                     <span class="bag-icon">👜</span>
@@ -309,28 +308,90 @@
                                     </div>
                                   </div>
                                   <div class="counter-wrapper">
-                                    <button class="counter-btn decrease" data-target="large">−</button>
+                                    <button type="button" class="counter-btn decrease" data-target="large">−</button>
                                     <div class="counter-value" id="large">1</div>
-                                    <button class="counter-btn increase" data-target="large">+</button>
+                                    <button type="button" class="counter-btn increase" data-target="large">+</button>
                                   </div>
+                                </div>
+                            </div>
+                            <div class="w-100">
+                                <div class="mb-3">
+                                    <h5>OverSized Items (Optional)</h5>
+                                    <p class="oversized-desc">Oversized items like comgorters and pillows require their own load and can be included for an additional $8 fee. <a href="#" class="text-decoration-underline">Learn More</a></p>
+                                </div>
+                                <div class="bag-item">
+                                    <div class="bag-info">
+                                      <span class="bag-icon">👜</span>
+                                      <div>
+                                        <div class="bag-text-title">Oversized Items</div>
+                                      </div>
+                                    </div>
+                                    <div class="counter-wrapper">
+                                      <button type="button" class="counter-btn decrease" data-target="overSized">−</button>
+                                      <div class="counter-value" id="overSized">1</div>
+                                      <button type="button" class="counter-btn increase" data-target="overSized">+</button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="w-100 d-flex align-items-center justify-content-between">
                                 <button type="button" class="app-prev-btn prev-btn">Previous</button>
-                                <button type="button" class="app-next-btn next-btn">Next</button>
+                                <button type="button" class="app-next-btn" data-bs-toggle="modal" data-bs-target="#bagpopup">Next</button>
+                            </div>
+                            <div class="modal fade" id="bagpopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                                aria-labelledby="bagpopupLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="bagpopupLabel">Protecting Laundry Pros</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="text-dark my-1">To ensure the health and safety of your Laundry Pro, please certify that your laundry :</p>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="biohazardous">
+                                                <label class="form-check-label" for="biohazardous">
+                                                    Is safe and does not include bed bugs, fleas, roaches, or biohazardous materials.
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="sanitary">
+                                                <label class="form-check-label" for="sanitary">
+                                                    Is sanitary and does not include feces, urine, blood, or vomit, beyond traces normally found in household laundry?
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1" id="petHair">
+                                                <label class="form-check-label" for="petHair">
+                                                    Does not include excessive pet hair?
+                                                </label>
+                                            </div>
+                                            <p class="text-dark my-1">Violators will incur a $20 fee, laundry returned "as is," and the account may be closed.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                                            <button type="button" class="app-next-btn next-btn w-100" data-bs-dismiss="modal" >Continue</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="step w-100" data-step="5">
                         <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100">
-                            <div class="w-100">
-                                <h5 class="text-start my-2 text-uppercase">Bag Count</h5>
-                                <p>
-                                    Put your laundry out for pickup in any bag you want, disposable bags, or your
-                                    hamper. If you use a hamper we'll transfer your clothes to our bags and leave your
-                                    hamper behind. You can also use laundry bags, which we'll return to you laundered.
-                                    At this time, you can only choose one bag size.
-                                </p>
+                            <span class="display-1" style="color: #44c8f5;">
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                            <h5 class="my-2 text-uppercase">No Prefered Laundry Pros yet</h5>
+                            <div class="w-100 text-center">
+                                    As you rate Laundry Pros highly, they'll be added here, making it easy to request them for future orders! <a href="#" class="text-decoration-underline">Learn more</a>.
+                            </div>
+                            <div class="p-3 rounded-5 bg-info d-flex align-items-center gap-3">
+                                <span class="d-flex align-items-center justify-content-center rounded-circle" style="width: 30px; height: 28px;">
+                                     <img src="assets/images/logo/ten.jpeg" alt="icon" class="img-fluid rounded-circle" style="width: 30; height: 28px;">
+                                </span>
+                                <div class="w-100">
+                                    <p class="text-capitalize text-dark fw-regular" style="font-size: 14px;">In the meantime, highly-rated Laundry Pros nearby will be notified of your order.</p>
+                                </div>
                             </div>
                             <div class="w-100 d-flex align-items-center justify-content-between">
                                 <button type="button" class="app-prev-btn prev-btn">Previous</button>
@@ -341,7 +402,7 @@
                     <div class="step w-100" data-step="6">
                         <div class="d-flex flex-column justify-content-center align-items-center gap-3 w-100">
                             <div class="w-100">
-                                <h5 class="text-start my-2 text-uppercase">Bag Count</h5>
+                                <h5 class="text-start my-2 text-uppercase">Coverage</h5>
                                 <p>
                                     Put your laundry out for pickup in any bag you want, disposable bags, or your
                                     hamper. If you use a hamper we'll transfer your clothes to our bags and leave your

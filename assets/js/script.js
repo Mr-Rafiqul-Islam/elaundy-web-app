@@ -13,7 +13,7 @@
   }
 $(document).ready(function () {
   // Initialize button states
-  ['small', 'regular', 'large'].forEach(updateButtons);
+  ['small', 'regular', 'large', 'overSized'].forEach(updateButtons);
 
   $('.increase').on('click', function () {
     const targetId = $(this).data('target');
