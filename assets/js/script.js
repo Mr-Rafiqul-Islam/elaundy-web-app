@@ -7,7 +7,7 @@
     const $decBtn = $(`.decrease[data-target="${targetId}"]`);
     const $incBtn = $(`.increase[data-target="${targetId}"]`);
 
-    $decBtn.prop("disabled", value <= 1);
+    $decBtn.prop("disabled", value <= 0);
     $incBtn.prop("disabled", value >= 5);
   }
   $(document).ready(function () {
@@ -28,7 +28,7 @@
       const targetId = $(this).data("target");
       const $valueEl = $(`#${targetId}`);
       let value = parseInt($valueEl.text());
-      if (value > 1) {
+      if (value > 0) {
         $valueEl.text(--value);
         updateButtons(targetId);
       }
@@ -73,6 +73,18 @@
         return false;
       }
     });
+
+    if (valid && currentStep === 4) {
+      const smallVal = parseInt($("#small").text());
+      const regularVal = parseInt($("#regular").text());
+      const largeVal = parseInt($("#large").text());
+      const overSizedVal = parseInt($("#overSized").text());
+
+      if (smallVal === 0 && regularVal === 0 && largeVal === 0 && overSizedVal === 0) {
+        alert("Please select at least one bag count (Small, Regular, Large, or OverSized).");
+        valid = false;
+      }
+    }
 
     if (valid && currentStep < 7) {
       currentStep++;
