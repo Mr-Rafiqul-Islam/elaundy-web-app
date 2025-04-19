@@ -89,7 +89,7 @@ $(document).ready(function () {
       }
     });
 
-    if (valid && currentStep < 6) {
+    if (valid && currentStep < 7) {
       currentStep++;
       showStep(currentStep);
     }
