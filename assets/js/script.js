@@ -1,45 +1,44 @@
 (function ($) {
   "use strict";
 
-  
   // counter buttons
   function updateButtons(targetId) {
     const value = parseInt($(`#${targetId}`).text());
     const $decBtn = $(`.decrease[data-target="${targetId}"]`);
     const $incBtn = $(`.increase[data-target="${targetId}"]`);
 
-    $decBtn.prop('disabled', value <= 1);
-    $incBtn.prop('disabled', value >= 5);
+    $decBtn.prop("disabled", value <= 1);
+    $incBtn.prop("disabled", value >= 5);
   }
-$(document).ready(function () {
-  // Initialize button states
-  ['small', 'regular', 'large', 'overSized'].forEach(updateButtons);
+  $(document).ready(function () {
+    // Initialize button states
+    ["small", "regular", "large", "overSized"].forEach(updateButtons);
 
-  $('.increase').on('click', function () {
-    const targetId = $(this).data('target');
-    const $valueEl = $(`#${targetId}`);
-    let value = parseInt($valueEl.text());
-    if (value < 5) {
-      $valueEl.text(++value);
-      updateButtons(targetId);
-    }
+    $(".increase").on("click", function () {
+      const targetId = $(this).data("target");
+      const $valueEl = $(`#${targetId}`);
+      let value = parseInt($valueEl.text());
+      if (value < 5) {
+        $valueEl.text(++value);
+        updateButtons(targetId);
+      }
+    });
+
+    $(".decrease").on("click", function () {
+      const targetId = $(this).data("target");
+      const $valueEl = $(`#${targetId}`);
+      let value = parseInt($valueEl.text());
+      if (value > 1) {
+        $valueEl.text(--value);
+        updateButtons(targetId);
+      }
+    });
   });
 
-  $('.decrease').on('click', function () {
-    const targetId = $(this).data('target');
-    const $valueEl = $(`#${targetId}`);
-    let value = parseInt($valueEl.text());
-    if (value > 1) {
-      $valueEl.text(--value);
-      updateButtons(targetId);
-    }
+  // for pickup instructions
+  $("#pickupChecks").change(function () {
+    $("#pickupInstructionsWrapper").toggleClass("show", this.checked);
   });
-});
-
-// for pickup instructions
-  $('#pickupChecks').change(function () {
-    $('#pickupInstructionsWrapper').toggleClass('show', this.checked);
-});
   // click card to select radio button
   $(".selectable-card").click(function () {
     $(this).find('input[type="radio"]').prop("checked", true).trigger("change");
@@ -52,21 +51,7 @@ $(document).ready(function () {
     }
   });
 
-  // form submit redirect to index2.html
-  $("#signup-form").on("submit", function (e) {
-    e.preventDefault(); // Prevent the default form submission
-    window.location.href = "index2.html"; // Redirect to index2.html
-  });
-  // banner slider js
-  $(".banner-slider").slick({
-    dots: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    arrows: false,
-    autoplay: true,
-  });
-
+  // form step js
   let currentStep = 1;
 
   function showStep(step) {
@@ -78,7 +63,7 @@ $(document).ready(function () {
 
   $(".next-btn").click(function () {
     const current = $('.step[data-step="' + currentStep + '"]');
-    const inputs = current.find("input, textarea");
+    const inputs = current.find("input, textarea, select");
     let valid = true;
 
     inputs.each(function () {
@@ -102,13 +87,9 @@ $(document).ready(function () {
     }
   });
 
-  $("#signupForm").on("submit", function (e) {
-    e.preventDefault();
-    alert("Signup Successful!");
-  });
-
   showStep(currentStep);
 
+  // password show/hide
   $(".eye-icon").on("click", function () {
     const $icon = $(this).find("i");
     const $passwordInput = $("#exampleInputPassword1");
@@ -121,6 +102,25 @@ $(document).ready(function () {
       $icon.removeClass("fa-eye-slash").addClass("fa-eye");
     }
   });
+
+  // form submit redirect to index2.html
+  $("#signup-form").on("submit", function (e) {
+    e.preventDefault(); // Prevent the default form submission
+    setTimeout(function () {
+      alert("Form submitted successfully!");
+    }, 1000); // Show alert after 1 second
+    window.location.href = "index2.html"; // Redirect to index2.html
+  });
+  // banner slider js
+  $(".banner-slider").slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    arrows: false,
+    autoplay: true,
+  });
+
   $(".services-slider-two").slick({
     dots: true,
     infinite: true,
