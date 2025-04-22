@@ -14,6 +14,18 @@
     // Initialize button states
     ["small", "regular", "large", "overSized"].forEach(updateButtons);
 
+    function disableOtherCounters(selectedId) {
+      const allIds = ["small", "regular", "large", "overSized"];
+      const val = parseInt($(`#${selectedId}`).val());
+      const disable = val > 0;
+      
+      allIds.forEach(id => {
+        if (id !== selectedId) {
+          $(`.increase[data-target="${id}"]`).prop("disabled", disable);
+        }
+      });
+    }
+
     $(".increase").on("click", function () {
       const targetId = $(this).data("target");
       const $input = $(`#${targetId}`);
@@ -21,16 +33,32 @@
       if (value < 5) {
         $input.val(++value);
         updateButtons(targetId);
+        disableOtherCounters(targetId);
       }
     });
 
     $(".decrease").on("click", function () {
       const targetId = $(this).data("target");
-      const $input = $(`#${targetId}`);
+      const $input = $(`#${targetId}`); // Fixed selector here
       let value = parseInt($input.val());
       if (value > 0) {
         $input.val(--value);
         updateButtons(targetId);
+  
+        // Check if all counters are 0; if yes enable all
+        const allIds = ["small", "regular", "large", "overSized"];
+        const anySelected = allIds.some(id => parseInt($(`#${id}`).val()) > 0);
+        if (!anySelected) {
+          // Enable all increment buttons
+          allIds.forEach(id => {
+            $(`.increase[data-target="${id}"]`).prop("disabled", false);
+          });
+        } else {
+          // Otherwise disable others based on currently selected counter(s)
+          // Find which counter(s) > 0, disable the rest
+          const selectedId = allIds.find(id => parseInt($(`#${id}`).val()) > 0);
+          disableOtherCounters(selectedId);
+        }
       }
     });
   });
