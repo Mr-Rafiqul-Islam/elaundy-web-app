@@ -11,34 +11,37 @@
     position: relative;
     z-index: 9;
     border: none;
-    &::before{
-      position:absolute;
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 10px;
-      top: 0;
-      left: 0;
-      content: "";
-      transform: scale(0);
-      background: var(--secondary2);
-      z-index: -1;
-      transition: var(--transition);
+
+    &::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 10px;
+        top: 0;
+        left: 0;
+        content: "";
+        transform: scale(0);
+        background: var(--secondary2);
+        z-index: -1;
+        transition: var(--transition);
     }
-    &:hover{
-      &::before{
-        transform: scale(1);
-      }
+
+    &:hover {
+        &::before {
+            transform: scale(1);
+        }
     }
-    
+
 }
+
 .app-form {
-    
+
     .app-input {
         display: inline-block;
         width: 100%;
         padding: 15px 30px;
-        padding-left: 35px!important;
+        padding-left: 35px !important;
         color: rgba(0, 0, 0, 0.897) !important;
         font-size: 14px;
         font-weight: 500;
@@ -46,10 +49,12 @@
         border: 2px solid #ccc;
         outline: none;
         position: relative;
+
         &:focus {
             border-color: var(--primary);
         }
     }
+
     .eye-icon {
         position: absolute;
         right: 10px;
@@ -57,18 +62,21 @@
         transform: translateY(-50%);
         cursor: pointer;
     }
+
     .app-input-icon {
         position: absolute;
         left: 12px;
         top: 50%;
         transform: translateY(-50%);
         z-index: 5;
-        i{
+
+        i {
             color: var(--primary);
         }
     }
 }
-.app-next-btn{
+
+.app-next-btn {
     padding: 0.375rem 0.75rem;
     background: var(--primary);
     color: white !important;
@@ -76,11 +84,13 @@
     border: none;
     font-size: 1rem;
     font-weight: 400;
-    &:hover{
+
+    &:hover {
         background: rgba(29, 46, 92, 0.8);
     }
 }
-.app-prev-btn{
+
+.app-prev-btn {
     padding: 0.375rem 0.75rem;
     background: var(--secondary2);
     color: white !important;
@@ -88,7 +98,8 @@
     border: none;
     font-size: 1rem;
     font-weight: 400;
-    &:hover{
+
+    &:hover {
         background: var(--tertiary);
     }
 }
@@ -129,6 +140,7 @@
     display: none;
 
 }
+
 .step.active {
     display: block;
 }
@@ -166,6 +178,7 @@
     align-items: center;
     list-style-type: none;
     margin-top: 20px;
+
     li {
         button {
             background-color: #ccc;
@@ -178,6 +191,7 @@
 
         }
     }
+
     .slick-active {
         button {
             background-color: var(--primary);
@@ -188,6 +202,7 @@
             border: none;
         }
     }
+
     .slick-dots li.slick-active button {
         background-color: var(--primary) !important;
     }
@@ -203,24 +218,29 @@
 .selectable-card.selected {
     border: 1px solid #007bff;
 }
-.selectable-card ul li{
+
+.selectable-card ul li {
     padding: 5px 0;
     font-size: 14px;
     font-weight: 500;
     color: #333;
 }
-.form-select{
+
+.form-select {
     padding: 15px 10px !important;
 }
-.bag-desc{
+
+.bag-desc {
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 10px;
     line-height: 22px;
 }
-.instruction-icon{
+
+.instruction-icon {
     cursor: pointer;
 }
+
 #pickupInstructionsWrapper {
     max-height: 0;
     overflow: hidden;
@@ -228,9 +248,11 @@
     opacity: 0;
     margin-top: 0;
 }
- /* When visible */
- #pickupInstructionsWrapper.show {
-    max-height: 200px; /* Adjust as needed */
+
+/* When visible */
+#pickupInstructionsWrapper.show {
+    max-height: 200px;
+    /* Adjust as needed */
     opacity: 1;
     margin-top: 10px;
 }
@@ -242,9 +264,9 @@
     border-radius: 999px;
     overflow: hidden;
     margin-left: auto;
-  }
+}
 
-  .counter-btn {
+.counter-btn {
     width: 40px;
     height: 40px;
     border: none;
@@ -254,43 +276,46 @@
     background-color: #000;
     color: white;
     transition: background-color 0.2s ease;
-  }
+}
 
-  .counter-btn:disabled {
+.counter-btn:disabled {
     background-color: #ccc !important;
     cursor: not-allowed;
-  }
+}
 
-  .counter-value {
+.counter-value {
     width: 40px;
     text-align: center;
     font-weight: bold;
+    border: none;
+    background: white;
     line-height: 40px;
-  }
+    pointer-events: none;
+}
 
-  .bag-item {
+.bag-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
     margin-bottom: 20px;
-  }
+}
 
-  .bag-info {
+.bag-info {
     display: flex;
     align-items: center;
     gap: 10px;
-  }
+}
 
-  .bag-icon {
+.bag-icon {
     font-size: 24px;
-  }
+}
 
-  .bag-text-title {
+.bag-text-title {
     font-weight: 600;
-  }
+}
 
-  .bag-text-sub {
+.bag-text-sub {
     font-size: 13px;
     color: #666;
-  }
+}

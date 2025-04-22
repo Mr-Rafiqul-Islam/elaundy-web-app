@@ -1366,7 +1366,8 @@ p {
 
 /* When visible */
 #pickupInstructionsWrapper.show {
-  max-height: 200px; /* Adjust as needed */
+  max-height: 200px;
+  /* Adjust as needed */
   opacity: 1;
   margin-top: 10px;
 }
@@ -1406,7 +1407,10 @@ p {
   width: 40px;
   text-align: center;
   font-weight: bold;
+  border: none;
+  background: white;
   line-height: 40px;
+  pointer-events: none;
 }
 
 .bag-item {
