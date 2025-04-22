@@ -103,10 +103,10 @@
     });
 
     if (valid && currentStep === 4) {
-      const smallVal = parseInt($("#small").text());
-      const regularVal = parseInt($("#regular").text());
-      const largeVal = parseInt($("#large").text());
-      const overSizedVal = parseInt($("#overSized").text());
+      const smallVal = parseInt($("#small").val());
+      const regularVal = parseInt($("#regular").val());
+      const largeVal = parseInt($("#large").val());
+      const overSizedVal = parseInt($("#overSized").val());
 
       if (
         smallVal === 0 &&
