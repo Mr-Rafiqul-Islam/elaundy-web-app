@@ -1449,3 +1449,58 @@ p {
   font-size: 13px;
   color: #666;
 }
+
+.responsive-table {
+  width: 100%;
+}
+.responsive-table li {
+  border-radius: 3px;
+  padding: 25px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 25px;
+}
+.responsive-table .table-header {
+  background-color: var(--tertiary);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  font-weight: 600;
+}
+.responsive-table .table-row {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+.responsive-table .data-label {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+@media all and (max-width: 991px) {
+  .responsive-table .table-header {
+    display: none;
+  }
+  .responsive-table li {
+    display: block;
+  }
+  .responsive-table .data-label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px 0;
+  }
+  .responsive-table .data-label:before {
+    color: #6C7A89;
+    padding-right: 10px;
+    content: attr(data-bs-label);
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    text-align: left;
+  }
+}

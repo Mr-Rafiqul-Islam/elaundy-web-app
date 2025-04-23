@@ -319,3 +319,51 @@
     font-size: 13px;
     color: #666;
 }
+
+.responsive-table {
+    width: 100%;
+    li {
+      border-radius: 3px;
+      padding: 25px 30px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+    .table-header {
+    //   background-color: #95A5A6;
+    background-color: var(--tertiary);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .table-row {
+      background-color: #ffffff;
+      box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+    }
+    .data-label{
+        align-self: center;
+    }
+    
+    @media all and (max-width: 991px) {
+      .table-header {
+        display: none;
+      }
+      
+      li {
+        display: block;
+      }
+      .data-label {
+        display: flex;
+        padding: 10px 0;
+        &:before {
+          color: #6C7A89;
+          padding-right: 10px;
+          content: attr(data-bs-label);
+          flex-basis: 50%;
+          text-align: left;
+        }
+      }
+    }
+  }
